@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // загрузить данные пользователя из БД
     // и заполнить переменную $values,
     // предварительно санитизовав.
-    $db = new PDO('mysql:host=localhost;dbname=u46981', 'u46981', '3843607', array(PDO::ATTR_PERSISTENT => true));
+    $db = new PDO('mysql:host=localhost;dbname=u41031', 'u41031', '1232344', array(PDO::ATTR_PERSISTENT => true));
     
     $stmt = $db->prepare("SELECT * FROM human WHERE id = ?");
     $stmt -> execute([$_SESSION['uid']]);
@@ -196,7 +196,7 @@ else {
       session_start() && !empty($_SESSION['login'])) {
     // Перезаписываем данные в БД новыми данными,
     // кроме логина и пароля.
-    $db = new PDO('mysql:host=localhost;dbname=u46981', 'u46981', '3843607', array(PDO::ATTR_PERSISTENT => true));
+    $db = new PDO('mysql:host=localhost;dbname=u41031', 'u41031', '1232344', array(PDO::ATTR_PERSISTENT => true));
     
     // Обновление данных в таблице human
     $stmt = $db->prepare("UPDATE human SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, bio = ? WHERE id= ?");
